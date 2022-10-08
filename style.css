@@ -1,15 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
 * {
   box-sizing: border-box; /*so padding and border doesnt effect the width and height of the element*/
 }
 
 body {
   font-family: "Roboto", sand-serif;
-  margin: 0;
+  margin: 0 auto;
   min-height: 100vh; /* we need to assign a height so the items knows where to center*/
+  background-image: linear-gradient(
+    40deg,
+    rgba(153, 21, 75, 1) 35%,
+    rgba(226, 226, 11, 1) 74%
+  );
+}
+h1 {
+  text-align: center;
+  color: black;
+  font-family: "Black Ops One", cursive;
+  font-size: 70px;
+}
+.cards-container {
+  margin: 0 auto;
+  width: 90%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /*so there are no scroll bars visible*/
+}
+.card {
+  width: 100px;
+  height: 170px;
+  border-radius: 8px;
+  background-color: greenyellow;
 }
