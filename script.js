@@ -17,12 +17,12 @@ const colors = {
   normal: "#F5F5F5",
 };
 
-const fetchPokemons = async function () {
+async function fetchPokemons() {
   for (i = 1; i <= 150; i++) {
-    await getPokemon(i);
+    await getPokemons(i);
   }
-};
-async function getPokemon(id) {
+}
+async function getPokemons(id) {
   const get = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const response = await get.json();
   console.log(response);
