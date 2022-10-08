@@ -1,34 +1,64 @@
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alkalami&family=Black+Ops+One&display=swap");
 * {
   box-sizing: border-box; /*so padding and border doesnt effect the width and height of the element*/
 }
 
 body {
-  font-family: "Roboto", sand-serif;
-  margin: 0 auto;
-  min-height: 100vh; /* we need to assign a height so the items knows where to center*/
-  background-image: linear-gradient(
+  background: rgb(101, 227, 14);
+  background: linear-gradient(
     40deg,
-    rgba(153, 21, 75, 1) 35%,
+    rgba(101, 227, 14, 1) 35%,
     rgba(226, 226, 11, 1) 74%
   );
+
+  margin: 0;
+  height: 100vh;
+  font-family: "Alkalami", serif;
 }
 h1 {
-  text-align: center;
-  color: black;
+  font-size: 60px;
   font-family: "Black Ops One", cursive;
-  font-size: 70px;
+  text-align: center;
 }
-.cards-container {
-  margin: 0 auto;
-  width: 90%;
+.poke-container {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.card {
-  width: 100px;
-  height: 170px;
-  border-radius: 8px;
-  background-color: greenyellow;
+.pokemon-card {
+  background-color: #eee;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(35, 56, 118, 0.7);
+  margin: 10px;
+  padding: 20px;
+}
+.pokemon-card .img-container {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+}
+.pokemon-card .img-container img {
+  max-width: 90%; /*90 percent of its container so it sits now in its container*/
+  margin-top: 20px;
+}
+
+.info {
+  margin-top: 20px;
+  text-align: center;
+}
+.info .number {
+  background-color: rgba(243, 19, 232, 0.304);
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 0.8em;
+  text-align: center;
+}
+.name {
+  margin: 5px;
+  font-weight: bold;
 }
