@@ -16,6 +16,7 @@ const colors = {
   fighting: "#E6E0D4",
   normal: "#F5F5F5",
 };
+const main_types = Object.keys(colors); /*created keys for the object items*/
 
 /*let animals = [
   { name: "cat", species: "mammal", number: 10 },
@@ -69,6 +70,7 @@ function createPokemonData(pokemon) {
 
   const poke_types = pokemon.types.map((type) => type.type.name);
   /*the map method is used to map through an array*/
+  const type = main_types.find((type) => poke_types.indexOf(type) > -1);
 
   const pokemonInnerHTML = `<div class="img-container">
           <img
@@ -80,7 +82,7 @@ function createPokemonData(pokemon) {
         <div class="info">
           <span class="number" id="number">#${id}</span>
           <p class="name">${name}</p>
-          <small class="type">Type: <span>${poke_types[0]}</span></small>
+          <small class="type">Type: <span>${type}</span></small>
         </div>`;
   pokemonEl.innerHTML = pokemonInnerHTML;
   poke_container.appendChild(pokemonEl);
