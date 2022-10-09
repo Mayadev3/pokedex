@@ -54,7 +54,21 @@ function createPokemonData(pokemon) {
   const pokemonEl = document.createElement("div");
   pokemonEl.classList.add("pokemon");
 
-  const name = pokemon.name.toUpperCase();
+  const name =
+    pokemon.name[0].toUpperCase() +
+    pokemon.name.slice(
+      1
+    ); /*this is used to make the firt letter of the name capital*/
+
+  const id = pokemon.id
+    .toString()
+    .padStart(
+      3,
+      00
+    ); /* this method is used to insert characters in the beginning of a word*/
+
+  const poke_types = pokemon.types.map((type) => type.type.name);
+  /*the map method is used to map through an array*/
 
   const pokemonInnerHTML = `<div class="img-container">
           <img
@@ -64,9 +78,9 @@ function createPokemonData(pokemon) {
           />
         </div>
         <div class="info">
-          <span class="number" id="number">#001</span>
+          <span class="number" id="number">#${id}</span>
           <p class="name">${name}</p>
-          <small class="type">Type: <span>grass</span></small>
+          <small class="type">Type: <span>${poke_types[0]}</span></small>
         </div>`;
   pokemonEl.innerHTML = pokemonInnerHTML;
   poke_container.appendChild(pokemonEl);
