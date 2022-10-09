@@ -25,6 +25,7 @@ async function fetchPokemons() {
 async function getPokemons(id) {
   const get = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const response = await get.json();
-  console.log(response);
+  createPokemonData(response);
 }
 fetchPokemons();
+function createPokemonData() {}
