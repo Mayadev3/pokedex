@@ -18,25 +18,6 @@ const colors = {
 };
 const main_types = Object.keys(colors); /*created keys for the object items*/
 
-/*let animals = [
-  { name: "cat", species: "mammal", number: 10 },
-  {
-    name: "fish",
-    species: "amphibian",
-    number: 13,
-  },
-  {
-    name: "chicken",
-    species: "bird",
-    number: 20,
-  },
-];
-for (i = 0; i < animals.length; i++) {
-  if (animals[i].number > 13) {
-    console.log(animals[i].species);
-  }
-}*/
-
 async function fetchPokemons() {
   for (i = 1; i <= 150; i++) {
     getPokemons(i);
