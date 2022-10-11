@@ -51,7 +51,6 @@ function createPokemonData(pokemon) {
     ); /* this method is used to insert characters in the beginning of a word*/
 
   const poke_types = pokemon.types.map((type) => type.type.name);
-  /*the map method is used to map through an array*/
   const type = main_types.find((type) => poke_types.indexOf(type) > -1);
   const color = colors[type];
   pokemonEl.style.backgroundColor = color;
