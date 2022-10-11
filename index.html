@@ -22,3 +22,58 @@
     <script src="/script.js"></script>
   </body>
 </html>
+
+<!--const main_types = Object.keys(colors); /*created keys for the object items*/
+
+async function fetchPokemons() {
+  for (i = 1; i <= 150; i++) {
+    getPokemons(i);
+  }
+}
+
+async function getPokemons(id) {
+  const get = await fetch(` https://pokeapi.co/api/v2/pokemon/${id}`);
+  const response = await get.json();
+  createPokemonData(response);
+  console.log(response);
+}
+fetchPokemons();
+
+function createPokemonData(pokemon) {
+  const pokemonEl = document.createElement("div");
+  pokemonEl.classList.add("pokemon");
+
+  const name =
+    pokemon.name[0].toUpperCase() +
+    pokemon.name.slice(
+      1
+    ); /*this is used to make the firt letter of the name capital*/
+
+  const id = pokemon.id
+    .toString()
+    .padStart(
+      3,
+      00
+    ); /* this method is used to insert characters in the beginning of a word*/
+
+  const poke_types = pokemon.types.map((type) => type.type.name);
+  const type = main_types.find((type) => poke_types.indexOf(type) > -1);
+  const color = colors[type];
+  pokemonEl.style.backgroundColor = color;
+
+  const pokemonInnerHTML = `<div class="img-container">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png"" alt="${pokemon.name}"
+           
+            alt="pokemon"
+          />
+        </div>
+        <div class="info">
+          <span class="number" id="number">#${id}</span>
+          <p class="name">${name}</p>
+          <small class="type">Type: <span>${type}</span></small>
+        </div>`;
+  pokemonEl.innerHTML = pokemonInnerHTML;
+  poke_container.appendChild(pokemonEl);
+}
+-->
