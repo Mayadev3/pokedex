@@ -1,4 +1,4 @@
-# pokedex
+# Pokedex
 
 Pokemon is a very popular cartoon among kids and adults. Pokemon fans can visit my pokedex website to find the identity card of any pokemon they would like.
 Each card displays a picture of the pokemon, its id number, name, and type.
